@@ -1,10 +1,11 @@
+# Import key libraries and packages
 from fastapi import FastAPI
-from pydantic import BaseModel
 import pickle
-import pandas as pd
 import uvicorn
+from pydantic import BaseModel
+import pandas as pd
 
-app = FastAPI()
+
 
 # Function to load pickle file
 def load_pickle(filename):
@@ -18,10 +19,14 @@ ml_components = load_pickle('sepsis.pkl')
 # Components in the pickle file
 ml_model = ml_components['model']
 full_pipeline = ml_components['pipeline']
-num_pipeline = ml_components['num_pipe']
+
+# API base configuration
+app = FastAPI()
+
+
 
 # Setup the BaseModel
-class Input(BaseModel):
+class ModelInput(BaseModel):
     Plasma_glucose: int
     Blood_Work_Result_1: int
     Blood_Pressure: int
@@ -30,40 +35,46 @@ class Input(BaseModel):
     Body_mass_index: float
     Blood_Work_Result_4: float
     Age: int
+    
 
-def make_prediction(data):
-    # Create a DataFrame from the input data
-    df = pd.DataFrame(data)
 
-    # Perform transformations using the full_pipeline
-    df_prepared = full_pipeline.transform(df)
+def make_prediction(Plasma_glucose, Blood_Work_Result_1, Blood_Pressure, 
+                    Blood_Work_Result_2, Blood_Work_Result_3, Body_mass_index, 
+                    Blood_Work_Result_4, Age):
+    data = pd.DataFrame({'Plasma glucose': [Plasma_glucose], 'Blood Work Result-1':	[Blood_Work_Result_1],
+                         'Blood Pressure': [Blood_Pressure], 'Blood Work Result-2': [Blood_Work_Result_2],
+                        'Blood Work Result-3': [Blood_Work_Result_3], 'Body mass index': [Body_mass_index],
+                        'Blood Work Result-4':	[Blood_Work_Result_4], 'Age': [Age]})
+   
+    
+
+    data_prepared = full_pipeline.transform(data)
 
     # Make the prediction and return output
-    model_output = ml_model.predict(df_prepared).tolist()
+    model_output = ml_model.predict(data_prepared).tolist()
     return model_output
 
-# Endpoint
-@app.post("/predict")
-def predict_sepsis(input_data:Input):
-    # Convert the input data to a dictionary
-    input_dict = input_data.dict()
+# Endpoints
+@app.post("/Sepsis")
+async def predict(input: ModelInput):
+    output_pred = make_prediction(
+        Plasma_glucose=input.Plasma_glucose,
+        Blood_Work_Result_1=input.Blood_Work_Result_1,
+        Blood_Pressure=input.Blood_Pressure,
+        Blood_Work_Result_2=input.Blood_Work_Result_2,
+        Blood_Work_Result_3=input.Blood_Work_Result_3,
+        Body_mass_index=input.Body_mass_index,
+        Blood_Work_Result_4=input.Blood_Work_Result_4,
+        Age=input.Age
+        )
 
-    # Make the prediction
-    prediction = make_prediction([input_dict])
-
-    # Label the model output
-    if prediction[0] == 0:
+    # Labelling Model output
+    if output_pred == 0:
         output_pred = "Sepsis status is Negative"
     else:
         output_pred = "Sepsis status is Positive"
-
-    return {"prediction": output_pred, "input": input_data.dict()}
-
-
-
-
-
-
-
-
+    #return output_pred
+    return {"prediction": output_pred,
+            "input": input
+            }
 
