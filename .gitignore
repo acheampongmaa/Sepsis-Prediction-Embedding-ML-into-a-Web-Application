@@ -1,1 +1,11 @@
 .venv
+dataset/submission_file.csv
+dataset/sepsis.pkl
+dataset/README.md
+dataset/Paitients_Files_Train.csv
+main.py
+sepsis.pkl
+.gitignore
+dataset/Machine Learning Model.ipynb
+dataset/Paitients_Files_Test.csv
+
