@@ -15,7 +15,7 @@ def load_pickle(filename):
     
 
 # Load pickle file
-ml_components = load_pickle('sepsis.pkl')
+ml_components = load_pickle('src\assets\sepsis.pkl')
 
 # Components in the pickle file
 ml_model = ml_components['model']
