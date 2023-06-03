@@ -4,8 +4,14 @@ import pickle
 import uvicorn
 from pydantic import BaseModel
 import pandas as pd
+import os
+import sys
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
+# Define directory paths
+DIRPATH = os.path.dirname(os.path.realpath(__file__))
+ml_component= os.path.join(DIRPATH, "..", "src", "assets", "sepsis.pkl")
 
 # Function to load pickle file
 def load_pickle(filename):
@@ -15,11 +21,11 @@ def load_pickle(filename):
     
 
 # Load pickle file
-ml_components = load_pickle('src/assets/sepsis.pkl') 
+ml_components = load_pickle(ml_component) 
 
 # Components in the pickle file
 ml_model = ml_components['model']
-full_pipeline = ml_components['pipeline']
+pipeline_processing = ml_components['pipeline']
 
 # API base configuration
 app = FastAPI()
@@ -53,7 +59,7 @@ async def predict(Plasma_glucose: int, Blood_Work_Result_1: int,
                         'Blood Work Result-3': [Blood_Work_Result_3], 'Body mass index': [Body_mass_index],
                         'Blood Work Result-4':	[Blood_Work_Result_4], 'Age': [Age]})
     
-    data_prepared = full_pipeline.transform(data)
+    data_prepared = pipeline_processing.transform(data)
 
     model_output = ml_model.predict(data_prepared).tolist()
 
