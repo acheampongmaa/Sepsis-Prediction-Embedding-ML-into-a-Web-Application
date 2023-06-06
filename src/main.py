@@ -32,6 +32,11 @@ pipeline_processing = ml_components['pipeline']
 # API base configuration
 app = FastAPI()
 
+#Endpoints 
+#Root endpoints
+@app.get("/")
+def root():
+    return {"API": "An API for Sepsis Prediction."}
 
 @app.get('/Predict_Sepsis')
 async def predict(Plasma_glucose: int, Blood_Work_Result_1: int,
