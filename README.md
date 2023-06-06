@@ -94,7 +94,7 @@ They both have long command-lines which have the same structure, they pipe multi
 ## Summary
 | Code      | Name        | Published Article |  Deployed App |
 |-----------|-------------|:-------------:|------:|
-| LP4 |Customer Churn Prediction Application with Gradio|  [Article](https://medium.com/@qacheampong/customer-churn-prediction-application-with-gradio-c2d444e6af0a/) | [Customer Churn Prediction App with Gradio](https://huggingface.co/spaces/Queensly/Customer_Churn_Prediction_GradioApp/)|
+| LP6 |Embedding ML in API using FastAPI|  [Article](https://medium.com/@qacheampong/building-and-deploying-a-fastapi-app-with-hugging-face-9210e9b4a713/) | [API with FastAPI](https://queensly-fastapi-in-docker.hf.space/)|
 
 
 
