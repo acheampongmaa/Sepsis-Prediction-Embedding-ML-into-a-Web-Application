@@ -79,7 +79,7 @@ They both have long command-lines which have the same structure, they pipe multi
     
     - Demo
 
-          uvicorn src.demo_01.api:app --reload 
+          uvicorn src.main:app --reload 
 
   
   <!-- - Salary prediction
@@ -97,7 +97,10 @@ They both have long command-lines which have the same structure, they pipe multi
 |-----------|-------------|:-------------:|------:|
 | LP6 |Embedding ML in API using FastAPI|  [Article](https://medium.com/@qacheampong/building-and-deploying-a-fastapi-app-with-hugging-face-9210e9b4a713/) | [API with FastAPI](https://huggingface.co/spaces/Queensly/FastAPI_in_Docker/)|
 
-### Note: Anytime you want to access the API's interface, add "/docs" to the url.
+### Note: 
+1. To be able to see the interface of the delpoyed app in Hugging Face, click on the 3 dots beside the settings tab and select ‘Embed space’.
+2. Click on ‘Direct URL’. When it shows in the browser, add ‘/docs’ to see the interface.
+3. Anytime you want to access the API's interface, add "/docs" to the url.
 
 
 
