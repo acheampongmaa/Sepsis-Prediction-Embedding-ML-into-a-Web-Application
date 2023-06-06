@@ -96,6 +96,7 @@ They both have long command-lines which have the same structure, they pipe multi
 |-----------|-------------|:-------------:|------:|
 | LP6 |Embedding ML in API using FastAPI|  [Article](https://medium.com/@qacheampong/building-and-deploying-a-fastapi-app-with-hugging-face-9210e9b4a713/) | [API with FastAPI](https://queensly-fastapi-in-docker.hf.space/)|
 
+### Note: Anytime you want to access the API's interface, add "/docs" to the url.
 
 
 
