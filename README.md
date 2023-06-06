@@ -81,12 +81,13 @@ They both have long command-lines which have the same structure, they pipe multi
 
           uvicorn src.demo_01.api:app --reload 
 
-    <!-- - Salary prediction
+  
+  <!-- - Salary prediction
 
           uvicorn src.salary.api:app --reload  -->
 
 
-  - Go to your browser at the following address, to explore the api's documentation :
+  - Go to your browser at the following address, to explore the API:
         
       http://127.0.0.1:8000/docs
       
