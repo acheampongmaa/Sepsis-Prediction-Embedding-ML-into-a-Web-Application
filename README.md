@@ -1,62 +1,52 @@
 
 # Machine Learning API using FastAPI
-Develop a Machine Learning API (Application Programming Interface) using FastAPI.
-
 
 ## Introduction
 
-In this project, we aim to help you to discover how to create an API that might be requested to interact with a ML model. This is an interesting solution when you want to keep your model architecture secret or to make your model available to users already having an API. By creating an API, and deploying it, your model can so that receive request using the internet protocol as presented by the illustration below.
+In this project, we aim to create an API that might be requested to interact with a ML model. This is an interesting solution when you want to keep your model architecture secret or to make your model available to users already having an API. 
 
-![API illustration](https://lh3.googleusercontent.com/-qVJ4ZsbjsmH6CnYbojsAR4ImyHV8yxsFVinunH-pX7VCapGvufcXiPak6YVKIrj9ZdiCHwK5UFtQW8yuU5t83pz6fbqN1F2p74OWuT5dObCPnTBuCYr_P1mUg8arbP0WuEt7j_A)
-
-**Source** : *The benefits of Machine Learning APIs - UbiOps*
 
 
 ## Description
+We will construct a machine learning model utilizing the [Sepsis](https://www.kaggle.com/datasets/chaunguynnghunh/sepsis?select=README.md) dataset available on Kaggle. The primary objective of this model is to forecast whether a patient is afflicted with sepsis or not.
 
-<!-- 
-[FastAPI](https://fastapi.tiangolo.com/) # 
--->
+Once the model is created, we will develop an Application Programming Interface (API) using FastAPI, facilitating seamless communication with the model. The subsequent step involves deploying the API on the Hugging Face platform.
 
-You will have a minimal API demo with [FastAPI](https://fastapi.tiangolo.com/), this will just serve you to make sure that everything works correctly. Then, you will have to make your own API, this allowing you to interact with a Machine Learning model, that is to say:
-- Pass data through a request;
-- Get the data in using the API;
-- Apply the necessary processing;
-- Submit the processed data to the ML model to make the predictions;
-- Process the predictions obtained and return them as the API's response ot the input request.
+You can learn more about FastAPI here
+ [FastAPI](https://fastapi.tiangolo.com/). 
+ 
+### Dataset Description
 
-## Instructions
+### Data Fields
 
-Your task is to build an API integrating a ML model using FastAPI.
-Clone this repository to use it as a template, do not forget to change the readme at the end of the project.
-Your work should follow these next steps.
+| Column   Name                | Labels/Features | Description                                                                                                                                                                                                  |
+|------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ID                           | N/A              | Unique number to represent patient ID                                                                                                                                                                        |
+| PRG           | Label 1       |  Plasma glucose|
+| PL               | Label 2     |   Blood Work Result-1 (mu U/ml)                                                                                                                                                |
+| PR              | Label 3      | Blood Pressure (mm Hg)|
+| SK              | Label 4      | Blood Work Result-2 (mm)|
+| TS             | Label5      |     Blood Work Result-3 (mu U/ml)|                                                                                  
+| M11     | Label 6    |  Body mass index (weight in kg/(height in m)^2|
+| BD2             | Label 7     |   Blood Work Result-4 (mu U/ml)|
+| Age              | Label 8      |    patients age  (years)|
+| Insurance | N/A     | If a patient holds a valid insurance card|
+| Sepsis                 | Target Label         | Positive: if a patient in ICU will develop a sepsis, and Negative: otherwise |
 
-1.  Build a ML model to predict the [Sepsis](https://www.kaggle.com/datasets/chaunguynnghunh/sepsis?select=README.md), during the 2 first weeks. 
-
-2.  Build an API using Fast API, during the remaining weeks, to embed the ML model built.
+Missing Attribute Values: Yes
 
 
-Upon completion of your project, you are required to write a blog post
-on your thought process on medium, LinkedIn, personal blog, or any other
-suitable blogging site.
 
-## Rubrics
+## Project Processes
+Build an API integrating a ML model using FastAPI.
 
-Machine Learning :
+1.  Build a ML model to predict the [Sepsis](https://www.kaggle.com/datasets/chaunguynnghunh/sepsis?select=README.md).
 
--   **Excellent:** Have a pipeline/function that takes inputs and make accurate predictions.
+2.  Build an API using Fast API to embed the ML model built.
 
--   **Good:** Have a pipeline/function that takes inputs and make predictions.
+3. Deploy API in Hugging Face
 
--   **Fair:** Have a pipeline/function that takes inputs but faces bugs while doing predictions.
 
-API :
-
--   **Excellent:** Have an API that works correctly, taking inputs multiple inputs and returning all the related predictions.
-
--   **Good:** Have an API that launches, makes predictions and returns results.
-
--   **Fair:** Have an API that launches but having bugs regarding inputs handling or returning predictions.
 
 ## Setup
 
@@ -72,7 +62,7 @@ You need to have [`Python 3`](https://www.python.org/) on your system (**a Pytho
         
         python3 -m venv venv; source venv/bin/activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt  
 
-The both long command-lines have a same structure, they pipe multiple commands using the symbol ` ; ` but you may manually execute them one after another.
+They both have long command-lines which have the same structure, they pipe multiple commands using the symbol ` ; ` but you may manually execute them one after another.
 
 1. **Create the Python's virtual environment** that isolates the required libraries of the project to avoid conflicts;
 2. **Activate the Python's virtual environment** so that the Python kernel & libraries will be those of the isolated environment;
@@ -99,6 +89,15 @@ The both long command-lines have a same structure, they pipe multiple commands u
   - Go to your browser at the following address, to explore the api's documentation :
         
       http://127.0.0.1:8000/docs
+      
+
+## Summary
+| Code      | Name        | Published Article |  Deployed App |
+|-----------|-------------|:-------------:|------:|
+| LP4 |Customer Churn Prediction Application with Gradio|  [Article](https://medium.com/@qacheampong/customer-churn-prediction-application-with-gradio-c2d444e6af0a/) | [Customer Churn Prediction App with Gradio](https://huggingface.co/spaces/Queensly/Customer_Churn_Prediction_GradioApp/)|
+
+
+
 
 
 <!-- ## Screenshots
