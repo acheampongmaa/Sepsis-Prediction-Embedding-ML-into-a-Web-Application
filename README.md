@@ -89,12 +89,12 @@ They both have long command-lines which have the same structure, they pipe multi
   - Go to your browser at the following address, to explore the api's documentation :
         
       http://127.0.0.1:8000/docs
-      
+
 
 ## Summary
 | Code      | Name        | Published Article |  Deployed App |
 |-----------|-------------|:-------------:|------:|
-| LP6 |Embedding ML in API using FastAPI|  [Article](https://medium.com/@qacheampong/building-and-deploying-a-fastapi-app-with-hugging-face-9210e9b4a713/) | [API with FastAPI](https://queensly-fastapi-in-docker.hf.space/)|
+| LP6 |Embedding ML in API using FastAPI|  [Article](https://medium.com/@qacheampong/building-and-deploying-a-fastapi-app-with-hugging-face-9210e9b4a713/) | [API with FastAPI](https://huggingface.co/spaces/Queensly/FastAPI_in_Docker/)|
 
 
 
