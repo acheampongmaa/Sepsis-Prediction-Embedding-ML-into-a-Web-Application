@@ -131,5 +131,8 @@ Here are some ressources you would read to have a good understanding of FastAPI 
 
 
 ## Author
+- Queensly K. Acheampongmaa 
 
-- Queensly K. Acheampongmaa
+
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://www.linkedin.com/in/queensly-kyerewaa-acheampongmaa)
+  [![Hugging Face Spaces](https://img.shields.io/badge/Hugging-Face-yellow)](https://huggingface.co/Queensly)
