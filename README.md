@@ -81,12 +81,13 @@ They both have long command-lines which have the same structure, they pipe multi
 
           uvicorn src.demo_01.api:app --reload 
 
-    <!-- - Salary prediction
+  
+  <!-- - Salary prediction
 
           uvicorn src.salary.api:app --reload  -->
 
 
-  - Go to your browser at the following address, to explore the api's documentation :
+  - Go to your browser at the following address, to explore the API:
         
       http://127.0.0.1:8000/docs
 
@@ -96,6 +97,7 @@ They both have long command-lines which have the same structure, they pipe multi
 |-----------|-------------|:-------------:|------:|
 | LP6 |Embedding ML in API using FastAPI|  [Article](https://medium.com/@qacheampong/building-and-deploying-a-fastapi-app-with-hugging-face-9210e9b4a713/) | [API with FastAPI](https://huggingface.co/spaces/Queensly/FastAPI_in_Docker/)|
 
+### Note: Anytime you want to access the API's interface, add "/docs" to the url.
 
 
 
